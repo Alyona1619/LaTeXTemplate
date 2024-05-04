@@ -1,0 +1,110 @@
+\usetheme{default}                     % тема презентации
+\usecolortheme{default}                % цветовая тема презентации
+\usepackage[english,russian]{babel}    % локализация
+\usepackage[T2A]{fontenc}			   % кодировка
+\usepackage[utf8]{inputenc}            % кодировка
+\usepackage{multimedia}                % для добавления видео
+\usepackage{ragged2e}                  % выравнивания
+\usepackage{setspace}                  % межстрочные интервалы
+\usepackage{etoolbox}                  % для макросов
+
+\singlespacing  % одинарный межстрочный интервал
+% или \onehalfspacing % полуторный интервал для всего текста
+% или \doublespacing % двойной интервал для всего текста
+% или \setstretch{множитель} % произвольный интервал
+
+
+%%%% Вносим изменения в цветовую тему %%%%
+\usepackage{xcolor}                    % для работы с цветами
+% Определение цвета 
+\definecolor{isu_blue}{RGB}{0,98,175}
+% Настройки цвета заголовков
+\setbeamercolor{title}{fg=isu_blue}
+\setbeamercolor{frametitle}{fg=isu_blue}
+
+%%%% Настройка заголовков %%%%
+% Сдвиг заголовка
+\setbeamertemplate{frametitle}{\hspace*{0,5cm}\insertframetitle}  % левый отступ
+\addtobeamertemplate{frametitle}{\vspace*{0,6cm}}{\vspace*{-1cm}} % верхний и нижний отступ
+% Размер шрифта заголовка слайдов
+\setbeamerfont*{frametitle}{size=\fontsize{20}{20}}  % изменить 20 на нужное (pt)
+
+
+%%%% Новая команда для правильной нумерации слайдов %%%%
+% \numbered{ }
+\newcommand\numbered{\setbeamertemplate{footline}{%
+  \raisebox{10pt}{\makebox[\paperwidth]{%
+    \hfill\makebox[30pt]{%
+      \small\insertframenumber}}}}}
+
+%%%% Новая команда убирающая нумерацию (для титула и последнего) %%%%
+% \unnumbered{ }
+\newcommand\unnumbered{\setbeamertemplate{footline}{}} 
+
+
+%%%% Настройка расположения и вида элементов на титульном листе %%%%
+\makeatletter
+\defbeamertemplate*{title page}{mydefault}[1][]
+{
+  \vbox{}
+    \vspace*{-3ex}
+    \begin{beamercolorbox}[wd=\paperwidth,sep=8pt,left,#1]{institute}
+    \hfill
+        \begin{minipage}[t]{0.1\textwidth}
+            {\usebeamercolor[fg]{titlegraphic}\raisebox{-.1\height}{\inserttitlegraphic}}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{0.8\textwidth}
+            \vspace{2mm}
+            \begin{center}{\usebeamerfont{institute}\insertinstitute}\end{center}
+        \end{minipage}
+     \hfill
+    \end{beamercolorbox}
+  \vfill
+  \vskip3em\par
+  \begin{centering}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{title}
+      \usebeamerfont{title}\inserttitle\par%
+    \end{beamercolorbox}%
+    \vskip1em\par
+    \begin{beamercolorbox}[sep=8pt,center,#1]{date}
+      \usebeamerfont{author}
+      \insertauthor
+    \end{beamercolorbox}
+  \end{centering}
+\vspace{5ex}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}
+}
+\makeatother
+
+
+%%%% Выбор размера шрифта для элементов на титульном листе %%%%
+\setbeamerfont{institute}{size=\footnotesize}
+\setbeamerfont{title}{size=\Huge}
+\setbeamerfont{author}{size=\small}
+\setbeamerfont{date}{size=\footnotesize}
+
+
+%%%% Настройка подписей таблиц %%%% 
+\usepackage{cellspace}              % для ячеек таблиц
+\usepackage{array}                  % для таблиц
+\usepackage{longtable}              % для длинных таблиц
+\usepackage{float}
+\usepackage{subcaption}             % настройка подписей
+
+\DeclareCaptionLabelFormat{gosttable}{}
+\DeclareCaptionLabelSeparator{gosttab}{}
+\captionsetup[table]{labelformat=gosttable, labelsep=gosttab,font=small } % подпись обычной таблицы
+\captionsetup[longtable]{labelformat=gosttable, labelsep=gosttab, font=small} % подпись длинной таблицы
+
+
+%%%% Настройка подписей рисунков %%%%
+\DeclareCaptionLabelFormat{gostfigure}{}
+\DeclareCaptionLabelSeparator{gostfig}{}
+\captionsetup{labelsep=gostfig}
+\captionsetup[figure]{labelformat=gostfigure, labelsep=gostfig, font=normalsize}
+ % для [H] в figures и tables
+%\renewcommand{\thesubfigure}{\asbuk{subfigure}}
+

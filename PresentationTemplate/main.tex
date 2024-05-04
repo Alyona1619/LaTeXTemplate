@@ -1,0 +1,168 @@
+\documentclass{beamer}
+\usepackage{settings}
+
+
+%%%% Настройки титульного слайда %%%%
+% внесите ваши данные
+\titlegraphic{\includegraphics[height=1.5cm]{logo_isu.png}} % файл с лого
+\institute{ФГБОУ ВО «Иркутский государственный университет»
+        Факультет бизнес-коммуникаций и информатики
+        Кафедра естественнонаучных дисциплин}
+\title{\bfНазвание вашей работы} 
+\author{
+    {\bf Студент:} ФИО 14421-ДБ\\
+    {\bf Консультант:} уч.степень, уч.звание или должность ФИО\\
+    {\bf Научный руководитель:} уч.степень, уч.звание ФИО
+}
+\date{Иркутск 202*}
+
+
+
+\begin{document}
+
+%%%% Титульный слайд %%%%
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+
+{\numbered % заключаем слайды, на которых нужна нумерация в эту команду
+%%%% Слайд с целью  вашей работы %%%%
+\begin{frame}
+    \frametitle{Цель}
+    Здесь вы можете описать цель вашей работы.
+\end{frame}
+
+
+%%%% Слайд с задачами %%%%
+\begin{frame}
+    \frametitle{Задачи}
+    \begin{itemize}
+        \item Задача 1
+        \item Задача 2
+        \item Задача 3
+        % Добавьте нужное количество задач
+    \end{itemize}
+\end{frame}
+
+
+%%%% Шаблон слайда с таблицей %%%%
+\begin{frame}
+    \frametitle{Сравнительная таблица по выбору инструментов}
+    \renewcommand{\arraystretch}{1}  % увеличение высоты ячеек в 1 раз
+\newcolumntype{C}{ >{\centering\arraybackslash\footnotesize} m{2cm} }  % создаем новый тип столбца с вертикальным центрированием (m), чтобы не дублировать длинную запись (указать нужную ширину в сантиметрах)
+\begin{table}[h]
+    \caption{ Пример названия таблицы}  % закомментировать если не нужно 
+    \begin{tabular}{|C|C|C|C|}  % описываем 3 столбца таблицы
+    \hline  % горизонтальная черта
+    &  Заголовок столбца 1 & Заголовок столбца 2 & Заголовок столбца 3 \\  
+    \hline
+    Заголовок строки 1 & Значение & Значение & Значение \\ \hline
+    Заголовок строки 2 & Значение & Значение & Значение \\ \hline
+    Заголовок строки 3 & Значение & Значение & Значение \\ \hline
+    Заголовок строки 4 & Значение & Значение & Значение \\ \hline
+    Заголовок строки 5 & Значение & Значение & Значение \\ \hline
+    \end{tabular}
+\end{table}
+\end{frame}
+
+%%%% Шаблон слайда со списком %%%%
+\begin{frame}
+    \frametitle{Использованные инструменты}
+    \begin{itemize}
+        \item Инструмент 1
+        \item Инструмент 2
+        \item Инструмент 3
+    \end{itemize}
+\end{frame}
+
+
+%%%% Шаблон слайда с рисунком и подписью %%%%
+\begin{frame}
+    \frametitle{Рисунок с подписью}
+    \vspace{15mm} % если надо сдвинуть рисунок пониже
+    \begin{figure}
+        \includegraphics[width=0.7\textwidth]{example-image}
+        \caption{Подпись к рисунку}
+    \end{figure}
+\end{frame}
+
+
+%%%% Шаблон слайда с двумя рисунками %%%%
+\begin{frame}
+    \frametitle{Два рисунка с подписями}
+    \vspace{15mm} % если надо сдвинуть рисунки пониже
+    \begin{figure}
+        \centering
+        \begin{minipage}[b]{0.45\textwidth}
+            \includegraphics[width=\textwidth]{example-image-a}
+            \caption{Подпись к рисунку A}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[b]{0.45\textwidth}
+            \includegraphics[width=\textwidth]{example-image-b}
+            \caption{Подпись к рисунку B}
+        \end{minipage}
+    \end{figure}
+\end{frame}
+
+
+%%%% Шаблон слайда c измененным размером заголовка %%%%
+\begin{frame}
+    \frametitle{\scriptsize Пример очень маленького заголовка}
+    \vspace{5mm}
+    
+    \tiny самый маленький шрифт
+    
+    \scriptsize очень маленький шрифт
+    
+    \footnotesize шрифт для сносок
+    
+    \small маленький шрифт
+    
+    \normalsize базовый шрифт
+    
+    \large шрифт чуть больше базового
+    
+    \Large еще больше
+    
+    \LARGE очень большой шрифт
+    
+    \huge огромный шрифт
+    
+    \Huge самый большой шрифт
+    
+\end{frame}
+
+
+%%%% Слайд с заключением вашей работы %%%%
+\begin{frame}
+    \frametitle{Заключение}
+    Здесь вы можете сделать выводы по вашей работе.
+\end{frame}
+
+
+%%%% Слайд со списком использованных источников %%%%
+\begin{frame}
+\begin{onehalfspace}
+
+    \frametitle{Список использованных источников}
+\end{onehalfspace}
+    \begin{enumerate}
+        \item Источник 1
+        \item Источник 2
+        \item и т.д.
+    \end{enumerate}
+\end{frame}
+
+
+%%%% Последний слайд %%%%
+{\unnumbered % убираем нумерацию на последнем слайде
+\begin{frame}
+    \frametitle{ }
+    \centering
+    \Huge
+    Спасибо за внимание!
+\end{frame}}
+
+\end{document}
