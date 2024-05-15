@@ -13,7 +13,7 @@
 \renewcommand {\baselinestretch}{1.5} % межстрочный интервал
 \usepackage{etoolbox}                % для доп. макросов
 
-\renewcommand\normalsize{\fontsize{14}{14pt}\selectfont} % устанавливает \normalsize равным шрифту в 14 пунктов
+\renewcommand\normalsize{\fontsize{14}{14pt}\selectfont} % устанавливает шрифт (\normalsize) равным шрифту в 14 пунктов
 
 %%%% Про переносы %%%%
 \sloppy % не дает строке залесть на поля
@@ -106,6 +106,9 @@
 }{
   \end{enumerate}
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Списки %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{enumitem} % настройка списков
 
 %%%% Нумерованный список с русскими строчными буквами %%%%
 \newenvironment{enumasbuk}{
@@ -211,14 +214,14 @@
 %%%% Настройка стиля колонтитула для остальных страниц %%%%
 \pagestyle{fancy}
 \fancyhf{} % Очистить текущие настройки колонтитулов
-\fancyfoot[C]{\fontsize{14pt}{16pt}\selectfont\thepage} % Центрирование номера страницы на всех страницах
+\fancyfoot[C]{\fontsize{14pt}{14pt}\selectfont\thepage} % Центрирование номера страницы на всех страницах
 \setlength{\footskip}{1.7cm}
 \renewcommand{\headrulewidth}{0pt} % Убрать черную линию сверху
 
 %%%% Настройка стиля колонтитула для Title.tex %%%%
 \fancypagestyle{titlepage}{
     \fancyhf{} % Очистить текущие настройки колонтитулов
-    \fancyfoot[C]{\fontsize{14pt}{16pt}\selectfont\bf Иркутск 202*} % Установить текст в нижний колонтитул
+    \fancyfoot[C]{\fontsize{14pt}{14pt}\selectfont\bf Иркутск 202*} % Установить текст в нижний колонтитул
     \setlength{\footskip}{1.7cm} % Установить высоту колонтитула
 }
 

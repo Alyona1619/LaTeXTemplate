@@ -7,3 +7,5 @@
 им избежать часто совершаемые ошибки в оформлении. Сохраненные
 время и силы могут быть направлены на повышение качества содержания
 научно-исследовательской работы.
+
+Видео гайд по работе с шаблонами: [https://www.youtube.com/playlist?list=PLEi6YXJjTzwHIK\_g0Zc2m4cs4OVbxLyXN](https://www.youtube.com/playlist?list=PLEi6YXJjTzwHIK\_g0Zc2m4cs4OVbxLyXN)
