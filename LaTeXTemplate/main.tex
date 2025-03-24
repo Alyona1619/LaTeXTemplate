@@ -224,15 +224,15 @@ P_{gen}=P_{f} + P_S + P_C + P^3 + P_P
 \hfill\break 
 \hfill\break 
 
-\newcolumntype{J}{ >{\centering\arraybackslash} m{2cm} }
-\newcolumntype{B}{ >{\centering\arraybackslash} m{6cm} } % здесь можно указать правило выравнивания и ширину стобца
+\newcolumntype{J}{ >{\arraybackslash} m{2cm} }
+\newcolumntype{B}{ >{\arraybackslash} m{6cm} } % здесь можно указать правило выравнивания и ширину стобца
 % Из-за того, что мы прописали \centering в настройках столбцов выше, иногда нам придется использовать "\tabularnewline" вместо "\\"
 \begin{longtable}[h!]{|J|B|B|}
     \caption{Название длинной таблицы} \\
     \hline
-    № & Заголовок столбца 1 & Заголовок столбца 2 \tabularnewline
+    \multicolumn{1}{|c|}{№} & \multicolumn{1}{|c|}{Заголовок столбца 1} & \multicolumn{1}{|c|}{Заголовок столбца 2} \tabularnewline
     \hline
-    1 & 2 &  3 \tabularnewline
+    \multicolumn{1}{|c|}{1} & \multicolumn{1}{|c|}{2} &  \multicolumn{1}{|c|}{3} \tabularnewline
     \hline
     \endfirsthead
     \multicolumn{3}{r}{Окончание таблицы \thetable\hspace{-2em} } \tabularnewline  % корректируйте значение в \hspace{}, чтобы выровнять по правому краю
@@ -257,9 +257,9 @@ P_{gen}=P_{f} + P_S + P_C + P^3 + P_P
 
 4 & Данные & Данные \\ \hline
 
-5 & Данные & Данные \\  \hline 
+5 & Данные & Данные \\  % на месте где разрывается таблица линию не проводим
 
-6 & Данные & Данные \\ \hline % на месте где разрывается таблица линию не проводим
+6 & Данные & Данные \\ \hline 
 
 7 & Данные & Данные \\ 
 
